@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name         Distanz zwischen zwei Dörfern berechnen
+// @name         Village distance calculator
 // @namespace    https://github.com/LegendaryB/tw-framework
-// @version      0.2
+// @version      0.3
 // @author       LegendaryB
+// @description  Calculate the distance between two selectable villages
 // @include		 https://de*.die-staemme.de/game.php*screen=map*
 // @require      https://raw.githubusercontent.com/LegendaryB/tw-framework/main/dist/framework.js
 // @resource     table-template https://raw.githubusercontent.com/LegendaryB/tw-framework/main/src/userscripts/distanceCalculator/table-template.html
@@ -14,8 +15,7 @@
     'use strict';
 
     const win = typeof unsafeWindow != 'undefined' ? unsafeWindow : window;
-
-    const TABLE_TEMPLATE = GM_getResourceText('table-template');
+    const TEMPLATE = GM_getResourceText('table-template');
 
     let active = false;
     let onClickFn;
@@ -54,6 +54,10 @@
         }
     }
 
+    const formatTime = (input) => {
+        return input < 10 ? `0${input}` : input;
+    }
+
     const convertTime = (input) => {
         let input1 = Math.round(input * 60);
         let seconds = (input1 % 60);
@@ -61,12 +65,14 @@
         let minutes = input2 % 60;
         let input3 = Math.floor(input2 / 60);
         let hours = input3 % 24;
+        let days = Math.floor(input3 / 24);
 
-        seconds = seconds < 10 ? `0${seconds}` : seconds;
-        minutes = minutes < 10 ? `0${minutes}` : minutes;
-        hours = hours < 10 ? `0${hours}` : hours;
-
-        return `${hours}:${minutes}:${seconds}`;
+        if (days > 0) {
+            return `${days} Tag(e) ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        }
+        else {
+            return `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        }
     }
 
     const calculateDistance = () => {
@@ -110,7 +116,7 @@
 
     const renderTravelTimeTable = () => {
         let unitTravelTime = calculateUnitTravelTime();
-        let table = TABLE_TEMPLATE;
+        let table = TEMPLATE;
 
         for (const [unit, travelTime] of Object.entries(unitTravelTime)) {
             table = table.replace(`%${unit.toUpperCase()}%`, travelTime);
