@@ -1,5 +1,9 @@
 # Color farm utilisation
 
-Script to warn the user about nearly full farms in the village production overview. Color thresholds are configurable. Just look at the script.js and adjust as you need.
+Highlights the farm utilisation in the production overview and lets the user configure custom threesholds
 
+## 🚀 How to use it?
+Navigate to settings -> Game options and configure it. After that go to overview -> production to see the script in action
+
+![image info](./screenshot1.png)
 ![image info](./screenshot.png)
