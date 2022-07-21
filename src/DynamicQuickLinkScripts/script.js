@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name         Dynamic quick link script loader
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @name         Dynamic quick link scripts
+// @namespace    https://github.com/LegendaryB/tw-userscripts
+// @version      0.2
 // @author       LegendaryB
+// @description
 // @match        https://*.die-staemme.de/game.php?*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        none
@@ -13,13 +14,13 @@
 
   class QuickLink {
     id = undefined;
-    title = undefined;
-    script = undefined;
+    displayName = undefined;
+    scriptLink = undefined;
 
-    constructor(title, script) {
+    constructor(displayName, scriptLink) {
       this.id = Date.now();
-      this.title = title;
-      this.script = script;
+      this.displayName = displayName;
+      this.scriptLink = scriptLink;
     }
   }
 
@@ -31,7 +32,7 @@
           <li id="${QUICKBAR_ADD_ELEMENT_ID}" class="quickbar_item">
             <span>
               <a class="quickbar_link" href="#">
-                %QUICKLINK_TITLE%
+                %QUICKLINK_DISPLAY_NAME%
               </a>
             </span>
           </li>`;
@@ -40,7 +41,7 @@
           <li id="%QUICKLINK_ID%" class="quickbar_item">
             <span>
               <a class="quickbar_link" href="#">
-                %QUICKLINK_TITLE%
+                %QUICKLINK_DISPLAY_NAME%
               </a>
               <img height="14" width="14" src="https://dsde.innogamescdn.com/asset/88a8f29e/graphic/delete.png" alt="" class="cancel_link_icon">
             </span>
@@ -50,7 +51,7 @@
 
   const createQuickLinkElement = (quicklink, template) => {
     template = template.replace('%QUICKLINK_ID%', quicklink.id);
-    template = template.replace('%QUICKLINK_TITLE%', quicklink.title);
+    template = template.replace('%QUICKLINK_DISPLAY_NAME%', quicklink.displayName);
 
     let templateElement = document.createElement('template');
     templateElement.innerHTML = template;
@@ -62,26 +63,38 @@
     let element = document.getElementById(id);
     element.parentElement.removeChild(element);
 
-    const index = array1.find(element => element.id == id);
+    const index = quickLinks.findIndex(element => element.id == id);
 
     if (index === undefined) {
       return;
     }
 
-    quickLinks[index] = null;
+    delete quickLinks[index];
     saveQuickLinks();
   }
 
   const ADD_CLICK_HANDLER = () => {
-    let title = prompt('Titel des Skripts in der Schnellleiste:');
-    let script = prompt('Skript einfügen:');
+    let displayName = prompt('Display name:');
 
-    let quickLink = new QuickLink(title, script);
+    if (displayName === null || displayName.length < 1) {
+      UI.ErrorMessage('You must enter a display name for the script!');
+      return;
+    }
 
-    insertQuickLink(quickLink);
+    let scriptLink = prompt('Script link:');
 
-    quickLinks.push(quickLink);
+    if (scriptLink === null || scriptLink.length < 1) {
+      UI.ErrorMessage('You must enter a link to a script!');
+      return;
+    }
+
+    let link = new QuickLink(displayName, scriptLink);
+
+    insertQuickLink(link);
+    quickLinks.push(link);
     saveQuickLinks();
+
+    UI.SuccessMessage('Quick link saved!');
   }
 
   const insertQuickLink = (quickLink) => {
@@ -89,8 +102,11 @@
 
     document.getElementById(QUICKBAR_ADD_ELEMENT_ID).before(element);
     document.getElementById(quickLink.id).querySelector('a').onclick = () => {
-      console.log(quickLink.script.replace('javascript: ', ''));
-      eval(quickLink.script.replace('javascript: ', ''));
+      let script = document.createElement('script');
+      script.src = quickLink.scriptLink;
+      script.async = true;
+
+      document.head.appendChild(script);
     };
     document.getElementById(quickLink.id).querySelector('.cancel_link_icon').onclick = () => DELETE_CLICK_HANDLER(quickLink.id);
   }
@@ -108,15 +124,11 @@
   const loadQuickLinks = () => {
     let data = localStorage.getItem(QUICKBAR_STORAGE_ID);
 
-    if (data === null) {
-      return [];
-    }
-
-    return JSON.parse(data);
+    return data === null ? [] : JSON.parse(data);
   }
 
   const insertAddNewQuickLinkButton = () => {
-    let quickLink = new QuickLink('Skript hinzufügen', '');
+    let quickLink = new QuickLink('Add script', '');
     let quickLinkElement = createQuickLinkElement(quickLink, QUICKBAR_ADD_ELEMENT_HTML_TEMPLATE);
     QUICKBAR_ELEMENT.appendChild(quickLinkElement);
 
