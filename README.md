@@ -7,5 +7,5 @@
 
 <sub>Built with ❤︎ by LegendaryB</sub>
 
-Userscripts for the famous browsergame "Die Stämme".
+Userscripts for the famous browsergame TribalWars. Userscripts are developed for the german server but should work on other servers with some little adjustments.
 </div><br>
