@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Village distance calculator
-// @namespace    https://github.com/LegendaryB/tw-framework
+// @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.3
 // @author       LegendaryB
 // @description  Calculate the distance between two selectable villages
