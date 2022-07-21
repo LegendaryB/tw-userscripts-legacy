@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Color farm utilisation
+// @name         Color farms utilisation
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.2
 // @author       LegendaryB
