@@ -9,7 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(() => {
     'use strict';
 
     const CONTENT_ROOT_ELEMENT_ID = "content_value";
