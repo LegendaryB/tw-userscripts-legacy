@@ -6,7 +6,7 @@
 // @description  Calculate the distance between two selectable villages
 // @include		 https://de*.die-staemme.de/game.php*screen=map*
 // @require      https://raw.githubusercontent.com/LegendaryB/tw-framework/main/dist/framework.js
-// @resource     table-template https://raw.githubusercontent.com/LegendaryB/tw-framework/main/src/userscripts/distanceCalculator/table-template.html
+// @resource     table-template https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageDistanceCalculator/table-template.html
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        GM_getResourceText
 // ==/UserScript==
