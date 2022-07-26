@@ -192,12 +192,12 @@
 
     if (game_data.screen === 'settings') {
         createSettingsTable();
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_AXE% [b]OFF[/b] %DATE% %PLAYER%'));
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_HEAVY% OFF %DATE% %PLAYER%'));
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_LIGHT% OFF %DATE% %PLAYER%'));
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_SNOBHOUSE% OFF %DATE% %PLAYER% %ICON_AXE% aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'));
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_MAIN% OFF %DATE% %PLAYER%'));
-        createNoteTemplateElement(new NoteTemplate('OFF', '%ICON_SNOB% OFF %DATE% %PLAYER%'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_AXE% [b]OFF[/b] %DATE% %PLAYER%'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_HEAVY% OFF %DATE% %PLAYER%'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_LIGHT% OFF %DATE% %PLAYER%'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_SNOBHOUSE% OFF %DATE% %PLAYER% %ICON_AXE% aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_MAIN% OFF %DATE% %PLAYER%'));
+        createNoteTemplateElement(new VillageNoteTemplate('OFF', '%ICON_SNOB% OFF %DATE% %PLAYER%'));
     }
     else if (game_data.screen === 'info_village') {
         applyFarmColors();
