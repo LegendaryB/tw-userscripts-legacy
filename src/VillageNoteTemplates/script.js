@@ -16,7 +16,8 @@
 
     const SCRIPT_ROOT = 'https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageNoteTemplates';
 
-    const VillageNoteTemplate = await import(`${SCRIPT_ROOT}/villageNoteTemplate.js`);
+    const VillageNoteTemplate = await import('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.js');
+    //console.log(VillageNoteTemplate);
 
     const SCRIPT_NAME = 'Village note templates';
     
