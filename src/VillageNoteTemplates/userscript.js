@@ -4,15 +4,12 @@
 // @version      0.1
 // @author       LegendaryB
 // @description  
-// @require      https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/moduleLoader.js
 // @include      https://de*.die-staemme.de/game.php?*&screen=info_village*
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings*mode=settings*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        none
 // ==/UserScript==
-
-addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.min.js');
 
 import VillageNoteTemplate from "./villageNoteTemplate";
 
