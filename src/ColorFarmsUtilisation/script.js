@@ -15,6 +15,8 @@
 (() => {
     'use strict';
 
+    const SCRIPT_NAME = 'Color farms utilisation';
+
     const SETTINGS_PERCENT_ID = 'colorFarmUtilisationUsePercent';
     const SETTINGS_ORANGE_THREESHOLD_ID = 'colorFarmUtilisationOrangeThreeshold';
     const SETTINGS_RED_THREESHOLD_ID = 'colorFarmUtilisationRedThreeshold';
@@ -39,7 +41,7 @@
         <table class="vis settings" width="100%">
         <tbody>
             <tr>
-                <th colspan="2">Color farm utilisation</th>
+                <th colspan="2">${SCRIPT_NAME} settings</th>
             </tr>
             <tr>
                 <td>Use percent values:</td>
@@ -69,7 +71,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input id="${SETTINGS_SAVE_ID}" class="btn" type="button" value="Save settings">
+                    <input id="${SETTINGS_SAVE_ID}" style="margin: 4px;" class="btn" type="button" value="Save settings">
                 </td>
             </tr>
         </tbody>
