@@ -4,6 +4,7 @@
 // @version      0.1
 // @author       LegendaryB
 // @description  
+// @require      https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/moduleLoader.js
 // @include      https://de*.die-staemme.de/game.php?*&screen=info_village*
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings*mode=settings*
@@ -11,13 +12,14 @@
 // @grant        none
 // ==/UserScript==
 
+addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.min.js');
+
+import VillageNoteTemplate from "./villageNoteTemplate";
+
 (async () => {
     'use strict';
 
-    const SCRIPT_ROOT = 'https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageNoteTemplates';
-
-    const VillageNoteTemplate = await import('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.js');
-    //console.log(VillageNoteTemplate);
+    // const SCRIPT_ROOT = 'https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageNoteTemplates';
 
     const SCRIPT_NAME = 'Village note templates';
     
