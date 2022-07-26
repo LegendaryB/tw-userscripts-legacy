@@ -18,6 +18,8 @@ import VillageNoteTemplate from "./villageNoteTemplate";
 
     // const SCRIPT_ROOT = 'https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageNoteTemplates';
 
+    debugger;
+
     const SCRIPT_NAME = 'Village note templates';
     
     // Local storage key

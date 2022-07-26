@@ -11,15 +11,23 @@
 // @grant        none
 // ==/UserScript==
 
-const addModule = (src) => {
-    const scriptElement = document.createElement('script');
-    scriptElement.type = 'module';
-    scriptElement.src = src;
+(() => {
+    const createScriptElement = (src) => {
+        const scriptElement = document.createElement('script');
+        scriptElement.src = src;
 
-    document.head.appendChild(scriptElement);
-}
+        return scriptElement;
+    }
 
-(async () => {
-    addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.min.js');
-    addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/userscript.min.js');
-});
+    const addModule = (src) => {
+        const scriptElement = createScriptElement(src);
+        scriptElement.type = 'module';
+
+        document.head.appendChild(scriptElement);
+    }
+
+    debugger;
+
+    addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/villageNoteTemplate.js');
+    addModule('https://cdn.jsdelivr.net/gh/LegendaryB/tw-userscripts/src/VillageNoteTemplates/userscript.js');
+})();
