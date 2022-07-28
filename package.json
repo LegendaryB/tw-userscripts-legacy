@@ -1,0 +1,24 @@
+{
+  "name": "tw-userscripts",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">tw-userscripts</h1><div align=\"center\">",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LegendaryB/tw-userscripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LegendaryB/tw-userscripts/issues"
+  },
+  "homepage": "https://github.com/LegendaryB/tw-userscripts#readme",
+  "devDependencies": {
+    "html-loader": "^3.1.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "terser-webpack-plugin": "^5.3.3"
+  }
+}

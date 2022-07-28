@@ -1,3 +1,17 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+;// CONCATENATED MODULE: ./src/VillageNoteTemplates/villageNoteTemplate.js
+class VillageNoteTemplate {
+    constructor(name, content) {
+        this.name = name;
+        this.content = content;
+    }
+}
+;// CONCATENATED MODULE: ./src/VillageNoteTemplates/settings-table-template.html
+const settings_table_template_namespaceObject = "<br>\r\n<table class=\"vis settings\" width=\"100%\">\r\n    <tbody>\r\n        <tr>\r\n            <th colspan=\"2\">\r\n                ${SCRIPT_NAME}\r\n                <span id=\"${SETTINGS_INFO_BTN_ID}\" style=\"float: right;\" class=\"icon info-med\"></span>\r\n            </th>\r\n        </tr>\r\n        <tr>\r\n            <td colspan=\"2\">\r\n                <table id=\"${SETTINGS_NOTE_TEMPLATE_TABLE_ID}\" class=\"vis settings\" width=\"100%\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th>Name</th>\r\n                            <th>Template</th>\r\n                            <th>Output</th>\r\n                            <th></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr id=\"${SETTINGS_EMPTY_TABLE_ROW_ID}\">\r\n                            <td colspan=\"4\">\r\n                                <span>No templates have been added yet.</span>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td colspan=\"2\">\r\n                <input id=\"${SETTINGS_NEW_BTN_ID}\" class=\"btn\" type=\"button\" value=\"New template\">\r\n                <input id=\"${SETTINGS_SAVE_BTN_ID}\" style=\"margin: 4px;\" class=\"btn\" type=\"button\"\r\n                    value=\"Save settings\">\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<br>";
+;// CONCATENATED MODULE: ./src/VillageNoteTemplates/userscript.js
 // ==UserScript==
 // @name         Village note templates
 // @namespace    https://github.com/LegendaryB/tw-userscripts
@@ -11,14 +25,14 @@
 // @grant        none
 // ==/UserScript==
 
-import { VillageNoteTemplate } from "./villageNoteTemplate";
-import htmlSettingsTableTemplate from './settings-table-template.html';
+
+
 
 (async () => {
 
     const SCRIPT_NAME = 'Village note templates';
 
-    const SETTINGS_TEMPLATE = htmlSettingsTableTemplate.replace('${SCRIPT_NAME}', SCRIPT_NAME);
+    const SETTINGS_TEMPLATE = settings_table_template_namespaceObject.replace('${SCRIPT_NAME}', SCRIPT_NAME);
     
     console.log(SETTINGS_TEMPLATE);
 
@@ -156,3 +170,5 @@ import htmlSettingsTableTemplate from './settings-table-template.html';
         applyFarmColors();
     }
 })();
+/******/ })()
+;
