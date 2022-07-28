@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.2
 // @author       LegendaryB
-// @description  Highlights the farm utilisation in the production overview and lets the user configure custom threesholds
 // @include      https://de*.die-staemme.de/game.php?*&screen=overview_villages*
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings*mode=settings*

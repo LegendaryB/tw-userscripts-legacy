@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.3
 // @author       LegendaryB
-// @description  Inserts radio buttons in the report overview to select all reports from today, yesterday or a custom date
 // @include      https://de*.die-staemme.de/game.php?*&screen=report*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        none

@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.1
 // @author       LegendaryB
-// @description  
 // @include      https://de*.die-staemme.de/game.php?*&screen=info_village*
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings
 // @include      https://de*.die-staemme.de/game.php?*&screen=settings*mode=settings*

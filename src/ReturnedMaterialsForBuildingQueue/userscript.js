@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.2
 // @author       LegendaryB
-// @description  Shows the returned materials for the buildings in the queue
 // @include      https://de*.die-staemme.de/game.php?*&screen=main*
 // @exclude      https://de*.die-staemme.de/game.php?*&screen=main*&mode=destroy
 // @require      https://raw.githubusercontent.com/LegendaryB/tw-framework/main/dist/framework.js

@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.3
 // @author       LegendaryB
-// @description  Inserts a list of the supporting players in the gathering place. When a player name is clicked, all supports from the player will be selected and can be sent back
 // @include		 https://de*.die-staemme.de/game.php*screen=place*&mode=units*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        none

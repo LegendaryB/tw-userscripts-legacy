@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.3
 // @author       LegendaryB
-// @description  Calculate the distance between two selectable villages
 // @include		 https://de*.die-staemme.de/game.php*screen=map*
 // @require      https://raw.githubusercontent.com/LegendaryB/tw-framework/main/dist/framework.js
 // @resource     table-template https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageDistanceCalculator/table-template.html

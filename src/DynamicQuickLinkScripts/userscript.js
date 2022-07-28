@@ -3,7 +3,6 @@
 // @namespace    https://github.com/LegendaryB/tw-userscripts
 // @version      0.2
 // @author       LegendaryB
-// @description
 // @match        https://*.die-staemme.de/game.php?*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
 // @grant        none
