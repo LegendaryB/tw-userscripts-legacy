@@ -1,0 +1,18 @@
+{
+    "settings": {
+        "header": "Dorfnotiz Vorlagen",
+        "createButton": "Erstellen",
+        "createButtonDialogText": "Bitte einen Namen für die neue Vorlage eingeben:",
+        "createButtonErrorText": "Es wurde kein Name für die neue Vorlage festgelegt!",
+        "templateInputPlaceholder": "Vorlage definieren",
+        "saveButton": "Änderungen speichern",
+        "importButton": "Importieren",
+        "exportButton": "Exportieren",
+        "noTemplatesAddedYet": "Es wurden bisher noch keine Dorfnotiz Vorlagen angelegt.",
+        "infoTooltip": "Klicken um die Hilfe anzuzeigen",
+        "deleteTemplateTooltip": "Vorlage löschen",
+        "deleteTemplateAltText": "Löschen",
+        "previewTemplateTooltip": "Vorschau anzeigen",
+        "previewTemplateAltText": "Vorschau"
+    }
+}

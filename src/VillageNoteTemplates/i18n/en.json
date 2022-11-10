@@ -1,0 +1,15 @@
+{
+    "settings": {
+        "header": "Village note templates",
+        "createButton": "Create",
+        "saveButton": "Save",
+        "importButton": "Import",
+        "exportButton": "Export",
+        "noTemplatesAddedYet": "No village note templates have been added yet.",
+        "infoTooltip": "Click to show help",
+        "deleteTemplateTooltip": "Delete template",
+        "deleteTemplateAltText": "Delete",
+        "previewTemplateTooltip": "Show preview",
+        "previewTemplateAltText": "Preview"
+    }
+}

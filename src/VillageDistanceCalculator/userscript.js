@@ -5,16 +5,64 @@
 // @author       LegendaryB
 // @include		 https://de*.die-staemme.de/game.php*screen=map*
 // @require      https://raw.githubusercontent.com/LegendaryB/tw-framework/main/dist/framework.js
-// @resource     table-template https://raw.githubusercontent.com/LegendaryB/tw-userscripts/main/src/VillageDistanceCalculator/table-template.html
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=die-staemme.de
-// @grant        GM_getResourceText
+// @grant        none
 // ==/UserScript==
 
 (async () => {
     'use strict';
 
     const win = typeof unsafeWindow != 'undefined' ? unsafeWindow : window;
-    const TEMPLATE = GM_getResourceText('table-template');
+    const TEMPLATE = `<table id="distance-calc-table" class="vis" style="border-spacing: 0px; border-collapse: collapse; table-layout: fixed;" width="100%">
+    <thead>
+        <tr>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_spear.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_sword.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_axe.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_spy.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_light.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_heavy.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_ram.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_catapult.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_snob.png" /></a>
+            </th>
+            <th style="text-align: center;">
+                <a href="#" class="unit_link"> <img src="https://dsde.innogamescdn.com/asset/f6f54c14/graphic/unit/unit_knight.png" /></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;" data-unit="spear">%SPEAR%</td>
+            <td style="text-align: center;" data-unit="sword">%SWORD%</td>
+            <td style="text-align: center;" data-unit="axe">%AXE%</td>
+            <td style="text-align: center;" data-unit="spy">%SPY%</td>
+            <td style="text-align: center;" data-unit="light">%LIGHT%</td>
+            <td style="text-align: center;" data-unit="heavy">%HEAVY%</td>
+            <td style="text-align: center;" data-unit="ram">%RAM%</td>
+            <td style="text-align: center;" data-unit="catapult">%CATAPULT%</td>
+            <td style="text-align: center;" data-unit="snob">%SNOB%</td>
+            <td style="text-align: center;" data-unit="snob">%KNIGHT%</td>
+        </tr>
+    </tbody>
+</table>`;
 
     let active = false;
     let onClickFn;

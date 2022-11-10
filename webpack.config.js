@@ -3,7 +3,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: {
-    VillageNoteTemplates: './src/VillageNoteTemplates/userscript.js'
+    VillageNoteTemplates: './src/VillageNoteTemplates/userscript.js',
+    VillageDistanceCalculator2: './src/VillageDistanceCalculator2/src/index.ts'
   },
   mode: 'production',
   output: {
